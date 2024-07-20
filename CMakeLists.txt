@@ -99,9 +99,9 @@ add_subdirectory(scripts)
 # Maya module files
 #------------------------------------------------------------------------------
 if (IS_WINDOWS)
-    configure_file("modules/mayaUePixelStreaming_Win.mod.template" ${PROJECT_BINARY_DIR}/mayaUePixelStreaming.mod)
+    configure_file("modules/mayaPixelStreamingUe_Win.mod.template" ${PROJECT_BINARY_DIR}/mayaPixelStreamingUe.mod)
 else()
-    configure_file("modules/mayaUePixelStreaming.mod.template" ${PROJECT_BINARY_DIR}/mayaUePixelStreaming.mod)
+    configure_file("modules/mayaPixelStreamingUe.mod.template" ${PROJECT_BINARY_DIR}/mayaPixelStreamingUe.mod)
 endif()
 
-install(FILES ${PROJECT_BINARY_DIR}/mayaUePixelStreaming.mod DESTINATION ${CMAKE_INSTALL_PREFIX})
+install(FILES ${PROJECT_BINARY_DIR}/mayaPixelStreamingUe.mod DESTINATION ${CMAKE_INSTALL_PREFIX})

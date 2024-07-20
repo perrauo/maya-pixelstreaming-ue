@@ -7,7 +7,7 @@ PYTHONPATH+:=lib/python
 PATH+:=bin
 PATH+:=lib
 
-+ MAYAUEPIXELSTREAMING ${MAYAUEPIXELSTREAMING_VERSION} ${CMAKE_INSTALL_PREFIX}
++ MAYAPixelStreamingUe ${MAYAPixelStreamingUe_VERSION} ${CMAKE_INSTALL_PREFIX}
 icons: 
 plug-ins: lib/maya
 presets: 

@@ -82,7 +82,7 @@ PXR_NAMESPACE_OPEN_SCOPE
 // Remove this using statement once the following code is moved into the MayaHydra namespace
 using MtohRendererDescription = MayaHydra::MtohRendererDescription;
 
-/*! \brief MayaUePixelStreamingRenderOverride is a rendering override class for the viewport to use Unreal Pixel Streaming
+/*! \brief MayaPixelStreamingUeRenderOverride is a rendering override class for the viewport to use Unreal Pixel Streaming
  */
 class PixelStreamingRenderOverride : public MHWRender::MRenderOverride
 {
@@ -102,7 +102,7 @@ public:
         const MHWRender::MDrawContext&                         drawContext,
         const MHWRender::MDataServerOperation::MViewportScene& scene);
     
-    MString uiName() const override { return MString("MayaUePixelStreaming"); }
+    MString uiName() const override { return MString("MayaPixelStreamingUe"); }
 
     MHWRender::DrawAPI supportedDrawAPIs() const override;
 
