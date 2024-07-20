@@ -30,3 +30,27 @@
 *.exe
 *.out
 *.app
+
+# Visual Studio with CMake
+*.vs/
+*.vcxproj
+*.vcxproj.filters
+*.sln
+*.suo
+*.user
+*.userosscache
+*.opensdf
+*.ipch
+*.log
+*.tlog
+*.lastbuildstate
+*.db
+*.db-wal
+*.db-shm
+*.VC.db
+*.VC.VC.opendb
+*.VC.db-shm
+*.VC.db-wal
+*.VC.opendb
+*.VC.opendb-shm
+*.VC.opendb-wal
