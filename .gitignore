@@ -54,3 +54,12 @@
 *.VC.opendb
 *.VC.opendb-shm
 *.VC.opendb-wal
+
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+*.cmake
+Makefile
+*.make
