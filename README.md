@@ -1,2 +1,2 @@
-# maya-ue-pixelstreaming
+# ue-maya-pixelstreaming
 Render Override for Unreal Pixel Streaming 
