@@ -59,7 +59,5 @@
 # CMake generated files
 CMakeCache.txt
 CMakeFiles/
-CMakeScripts/
-*.cmake
 Makefile
 *.make
