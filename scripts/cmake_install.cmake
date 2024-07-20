@@ -1,8 +1,8 @@
-# Install script for directory: C:/repos/maya-ue-pixelstreaming/scripts
+# Install script for directory: C:/repos/maya-pixelstreaming-ue/scripts
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files/maya-ue-pixelstreaming")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files/mayaPixelStreaming")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

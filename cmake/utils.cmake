@@ -196,7 +196,7 @@ function(mayaPixelStreaming_promoteHeaderList)
     if (PREFIX_BASEDIR)
         set(BASEDIR ${BASEDIR}/${PREFIX_BASEDIR})
     else()
-        set(BASEDIR ${BASEDIR}/mayaUsd)
+        set(BASEDIR ${BASEDIR}/mayaPixelStreaming)
     endif()
 
     if (PREFIX_SUBDIR)

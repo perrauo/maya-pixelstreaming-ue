@@ -1,8 +1,8 @@
-# Install script for directory: C:/repos/maya-ue-pixelstreaming/lib
+# Install script for directory: C:/repos/maya-pixelstreaming-ue/lib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files/maya-ue-pixelstreaming")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files/mayaPixelStreaming")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,6 +34,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("C:/repos/maya-ue-pixelstreaming/lib/mayaPlugin/cmake_install.cmake")
+  include("C:/repos/maya-pixelstreaming-ue/lib/mayaPixelStreaming/cmake_install.cmake")
 endif()
 

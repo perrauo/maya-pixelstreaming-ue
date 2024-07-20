@@ -1,1 +1,1 @@
-add_subdirectory(mayaPlugin)
+add_subdirectory(mayaPixelStreaming)
