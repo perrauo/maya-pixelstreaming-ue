@@ -40,7 +40,7 @@ endif()
 #   envVar         The environment variable to modify
 #   pathToAppend   The path to append
 #
-function(mayaUsd_append_path_to_env_var envVar pathToAppend)
+function(mayaPixelStreaming_append_path_to_env_var envVar pathToAppend)
     file(TO_NATIVE_PATH "${pathToAppend}" nativePathToAppend)
     if(DEFINED ENV{${envVar}})
         if(IS_WINDOWS)
@@ -60,7 +60,7 @@ endfunction()
 #
 # module           The python module to find
 #
-function(mayaUsd_find_python_module module)
+function(mayaPixelStreaming_find_python_module module)
     string(TOUPPER ${module} module_upper)
     set(MODULE_FOUND "${module_upper}_FOUND")
     if(NOT ${MODULE_FOUND})
@@ -87,20 +87,20 @@ endfunction()
 # Initialize a variable to accumulate an rpath.  The origin is the
 # RUNTIME DESTINATION of the target.  If not absolute it's appended
 # to CMAKE_INSTALL_PREFIX.
-function(mayaUsd_init_rpath rpathRef origin)
+function(mayaPixelStreaming_init_rpath rpathRef origin)
     if(NOT IS_ABSOLUTE ${origin})
         if(DEFINED INSTALL_DIR_SUFFIX)
             set(prefix "${CMAKE_INSTALL_PREFIX}/${INSTALL_DIR_SUFFIX}")
         else()
             set(prefix "${CMAKE_INSTALL_PREFIX}")
         endif()
-        # mayaUsd_add_rpath uses REALPATH, so we must make sure we always
+        # mayaPixelStreaming_add_rpath uses REALPATH, so we must make sure we always
         # do so here too, to get the right relative path
         # we get REALPATH against prefix directory first as it already existed
         get_filename_component(prefix "${prefix}" REALPATH)
         set(origin "${prefix}/${origin}")
     else()
-        # mayaUsd_add_rpath uses REALPATH, so we must make sure we always
+        # mayaPixelStreaming_add_rpath uses REALPATH, so we must make sure we always
         # do so here too, to get the right relative path
         get_filename_component(origin "${origin}" REALPATH)
     endif()
@@ -109,14 +109,14 @@ endfunction()
 
 # Add a relative target path to the rpath.  If target is absolute compute
 # and add a relative path from the origin to the target.
-function(mayaUsd_add_rpath rpathRef target)
+function(mayaPixelStreaming_add_rpath rpathRef target)
     if(IS_ABSOLUTE "${target}")
         # init_rpath calls get_filename_component([...] REALPATH), which does
         # symlink resolution, so we must do the same, otherwise relative path
         # determination below will fail.
         get_filename_component(target "${target}" REALPATH)
         # Make target relative to $ORIGIN (which is the first element in
-        # rpath when initialized with mayaUsd_init_rpath()).
+        # rpath when initialized with mayaPixelStreaming_init_rpath()).
         list(GET ${rpathRef} 0 origin)
         file(RELATIVE_PATH
             target
@@ -133,7 +133,7 @@ function(mayaUsd_add_rpath rpathRef target)
     set(${rpathRef} "${NEW_RPATH}" PARENT_SCOPE)
 endfunction()
 
-function(mayaUsd_install_rpath rpathRef NAME)
+function(mayaPixelStreaming_install_rpath rpathRef NAME)
     # Get and remove the origin.
     list(GET ${rpathRef} 0 origin)
     set(RPATH ${${rpathRef}})
@@ -167,7 +167,7 @@ function(mayaUsd_install_rpath rpathRef NAME)
 endfunction()
 
 #
-# mayaUsd_promoteHeaderList(
+# mayaPixelStreaming_promoteHeaderList(
 #                        [SUBDIR  <sub-directory name>]
 #                        [FILES   <list of files>]
 #                        [BASEDIR <sub-directory name>])
@@ -178,7 +178,7 @@ endfunction()
 #                if not defined, mayaUsd subdirectory is used by default.
 #
 #
-function(mayaUsd_promoteHeaderList)
+function(mayaPixelStreaming_promoteHeaderList)
     cmake_parse_arguments(PREFIX
         ""
         "SUBDIR;BASEDIR" # one_value keywords
@@ -222,7 +222,7 @@ function(mayaUsd_promoteHeaderList)
     endforeach()
 endfunction()
 
-function(mayaUsd_split_head_tail input_string split_string var_head var_tail)
+function(mayaPixelStreaming_split_head_tail input_string split_string var_head var_tail)
     string(FIND "${input_string}" "${split_string}" head_end)
     if("${head_end}" EQUAL -1)
         message(FATAL_ERROR "input_string '${input_string}' did not contain "
@@ -238,7 +238,7 @@ function(mayaUsd_split_head_tail input_string split_string var_head var_tail)
     set("${var_tail}" "${${var_tail}}" PARENT_SCOPE)
 endfunction()
 
-function(mayaUsd_indent outvar lines)
+function(mayaPixelStreaming_indent outvar lines)
     string(REPLACE "\n" "\n    " lines "${lines}")
     set("${outvar}" "    ${lines}" PARENT_SCOPE)
 endfunction()

@@ -13,7 +13,7 @@
 
 cmake_minimum_required(VERSION 3.13...3.17)
 
-project(maya-ue-pixelstreaming)
+project(mayaUePixelstreaming)
 
 #------------------------------------------------------------------------------
 # global options
@@ -99,9 +99,9 @@ add_subdirectory(scripts)
 # Maya module files
 #------------------------------------------------------------------------------
 if (IS_WINDOWS)
-    configure_file("modules/ueMayaPixelStreaming_Win.mod.template" ${PROJECT_BINARY_DIR}/ueMayaPixelStreaming.mod)
+    configure_file("modules/mayaPixelStreaming_Win.mod.template" ${PROJECT_BINARY_DIR}/mayaPixelStreaming.mod)
 else()
-    configure_file("modules/ueMayaPixelStreaming.mod.template" ${PROJECT_BINARY_DIR}/ueMayaPixelStreaming.mod)
+    configure_file("modules/mayaPixelStreaming.mod.template" ${PROJECT_BINARY_DIR}/mayaPixelStreaming.mod)
 endif()
 
-install(FILES ${PROJECT_BINARY_DIR}/ueMayaPixelStreaming.mod DESTINATION ${CMAKE_INSTALL_PREFIX})
+install(FILES ${PROJECT_BINARY_DIR}/mayaPixelStreaming.mod DESTINATION ${CMAKE_INSTALL_PREFIX})

@@ -22,41 +22,6 @@
 
 #include "renderOverride.h"
 
-#include "mayaColorPreferencesTranslator.h"
-#include "pluginDebugCodes.h"
-#include "renderOverrideUtils.h"
-#include "tokens.h"
-
-#include <mayaHydraLib/mayaHydraLibInterface.h>
-#include <mayaHydraLib/sceneIndex/registration.h>
-#include <mayaHydraLib/hydraUtils.h>
-
-#ifdef CODE_COVERAGE_WORKAROUND
-#include <flowViewport/fvpUtils.h>
-#endif
-#include <flowViewport/tokens.h>
-#include <flowViewport/colorPreferences/fvpColorPreferences.h>
-#include <flowViewport/colorPreferences/fvpColorPreferencesTokens.h>
-#include <flowViewport/debugCodes.h>
-#include <flowViewport/sceneIndex/fvpRenderIndexProxy.h>
-#include <flowViewport/selection/fvpSelectionTask.h>
-#include <flowViewport/selection/fvpSelection.h>
-#include <flowViewport/sceneIndex/fvpWireframeSelectionHighlightSceneIndex.h>
-#include <flowViewport/API/perViewportSceneIndicesData/fvpFilteringSceneIndicesChainManager.h>
-#include <flowViewport/API/perViewportSceneIndicesData/fvpViewportInformationAndSceneIndicesPerViewportDataManager.h>
-#include <flowViewport/API/interfacesImp/fvpDataProducerSceneIndexInterfaceImp.h>
-#include <flowViewport/API/interfacesImp/fvpFilteringSceneIndexInterfaceImp.h>
-#include <flowViewport/sceneIndex/fvpRenderIndexProxy.h>
-#include <flowViewport/sceneIndex/fvpBBoxSceneIndex.h>
-#include <flowViewport/sceneIndex/fvpReprSelectorSceneIndex.h>
-
-#include <pxr/base/plug/plugin.h>
-#include <pxr/base/plug/registry.h>
-#include <pxr/base/tf/type.h>
-#include <pxr/base/gf/vec3f.h>
-#include <pxr/base/tf/staticTokens.h>
-#include <pxr/pxr.h>
-
 #include <ufe/hierarchy.h>
 #include <ufe/selection.h>
 #include <ufe/namedSelection.h>
@@ -135,7 +100,7 @@ PXR_NAMESPACE_OPEN_SCOPE
     /* or if the selection kind is unspecified or     */ \
     /* empty, the exact prim picked in the viewport   */ \
     /* is selected.                                   */ \
-    ((SelectionKind, "mayaUsd_SelectionKind"))           \
+    ((SelectionKind, "mayaPixelStreaming_SelectionKind"))           \
     /* The method to use to resolve viewport picking  */ \
     /* when the picked object is a point instance.    */ \
     /* The default behavior is "PointInstancer" which */ \
@@ -145,7 +110,7 @@ PXR_NAMESPACE_OPEN_SCOPE
     /* resolve to individual point instances, or to   */ \
     /* "Prototypes" which will resolve to the prim    */ \
     /* that is being instanced by the point instance. */ \
-    ((PointInstancesPickMode, "mayaUsd_PointInstancesPickMode")) \
+    ((PointInstancesPickMode, "mayaPixelStreaming_PointInstancesPickMode")) \
 // clang-format on
 
 TF_DEFINE_PRIVATE_TOKENS(MayaUsdPickOptionVars, MAYAUSD_PICK_OPTIONVAR_TOKENS);

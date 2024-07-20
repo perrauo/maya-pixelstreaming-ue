@@ -1,4 +1,4 @@
-set(TARGET_NAME ueMayaPixelStreaming)
+set(TARGET_NAME mayaPlugin)
 
 add_library(${TARGET_NAME} SHARED)
 
@@ -32,10 +32,10 @@ target_include_directories(${TARGET_NAME}
 )
 
 
-if(DEFINED MAYAPixelStreamingUe_VERSION)
+if(DEFINED MAYAUE_PIXELSTREAMING_VERSION)
     target_compile_definitions(${TARGET_NAME}
         PRIVATE
-            MAYAPixelStreamingUe_VERSION=${MAYAPixelStreamingUe_VERSION}
+            MAYAUE_PIXELSTREAMING_VERSION=${MAYAUE_PIXELSTREAMING_VERSION}
     )
 endif()
 

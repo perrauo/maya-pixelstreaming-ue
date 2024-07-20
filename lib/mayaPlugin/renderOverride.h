@@ -27,11 +27,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-#ifndef PIXELSTREAMING_RENDER_OVERRIDE_H
-#define PIXELSTREAMING_RENDER_OVERRIDE_H
+#ifndef MAYAUE_PIXELSTREAMING_RENDER_OVERRIDE_H
+#define MAYAUE_PIXELSTREAMING_RENDER_OVERRIDE_H
 
-#include "renderGlobals.h"
-#include "pluginUtils.h"
+//#include "renderGlobals.h"
+//#include "pluginUtils.h"
 
 #include <maya/MCallbackIdArray.h>
 #include <maya/MMessage.h>
@@ -54,15 +54,15 @@ class Selection;
 
 /*! \brief MayaPixelStreamingUeRenderOverride is a rendering override class for the viewport to use Unreal Pixel Streaming
  */
-class PixelStreamingRenderOverride : public MHWRender::MRenderOverride
+class MayaUePixelStreamingRenderOverride : public MHWRender::MRenderOverride
 {
 public:
     // Picking support.
     class PickHandlerBase;
     friend PickHandlerBase;
 
-    PixelStreamingRenderOverride(const PixelStreamingRenderOverride& desc);
-    ~PixelStreamingRenderOverride() override;
+    MayaUePixelStreamingRenderOverride(const MayaUePixelStreamingRenderOverride& desc);
+    ~MayaUePixelStreamingRenderOverride() override;
 
     /// The names of all render delegates that are being used by at least
     /// one modelEditor panel.
@@ -94,4 +94,4 @@ private:
 
 };
 
-#endif // PIXELSTREAMING_RENDER_OVERRIDE_H
+#endif // MAYAUE_PIXELSTREAMING_RENDER_OVERRIDE_H
