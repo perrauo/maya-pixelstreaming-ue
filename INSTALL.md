@@ -7,7 +7,7 @@ XBMLANGPATH=C:\Users\<Username>\devkitBase\plug-ins\icons
 
 * You've got to set those envs
 
-set DEVKIT_LOCATION=C:\Users\<Username>\devkitBase\
+set MAYA_DEVKIT_LOCATION=C:\Users\<Username>\devkitBase\
 set MAYA_LOCATION="C:\Program Files\Autodesk\<maya_version>"
 set PATH=%PATH%;%MAYA_LOCATION%\bin
 
@@ -22,3 +22,5 @@ UFE_INCLUDE_DIR
 
 
 cmake -G "Visual Studio 17 2022" -A x64 -DUFE_INCLUDE_DIR=C:\Users\olivi\devkitBase\devkit\ufe\include -DUFE_LIBRARY=C:\Users\olivi\devkitBase\devkit\ufe\lib .
+
+cmake -G "Visual Studio 17 2022" -A x64 -DUFE_INCLUDE_DIR=C:\Users\olivi\devkitBase\devkit\ufe\include -DUFE_LIBRARY=C:\Users\olivi\devkitBase\devkit\ufe\lib -DMAYA_DEVKIT_LOCATION=C:\Users\olivi\devkitBase -DMAYA_LOCATION="C:\Program Files\Autodesk\Maya2025" .

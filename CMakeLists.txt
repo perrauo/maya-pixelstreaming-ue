@@ -43,7 +43,7 @@ if(MAYA_APP_VERSION VERSION_GREATER 2024)
     # The Qt6 archive in the Maya devkit contains everything needed for the normal cmake find_package.
     set(CMAKE_PREFIX_PATH "${MAYA_DEVKIT_LOCATION}/Qt")
     set(WANT_QT_VERSION 6.5)
-    find_package(Qt6 ${WANT_QT_VERSION} COMPONENTS Core Widgets QUIET)
+    find_package(Qt6 ${WANT_QT_VERSION} COMPONENTS Core Widgets WebEngineCore REQUIRED)
     if (Qt6_FOUND)
     else()
         message(WARNING "Could not find Qt ${WANT_QT_VERSION} in Maya devkit directory: ${MAYA_DEVKIT_LOCATION}. \

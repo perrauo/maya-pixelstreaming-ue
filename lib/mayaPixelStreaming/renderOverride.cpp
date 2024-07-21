@@ -1,5 +1,5 @@
 //
-// Copyright 2019 Perrauo
+// Copyright 2024 Perrauo
 //
 // Licensed under the Proprietary License, Version 1.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -40,6 +40,8 @@
 #include <maya/MUiMessage.h>
 #include <maya/MFnCamera.h>
 #include <maya/MFileIO.h>
+#include <maya/MFrameContext.h>
+#include <maya/MQtUtil.h>
 
 #include <atomic>
 #include <chrono>

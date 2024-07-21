@@ -4,6 +4,8 @@
 #include "PixelStreamingDemoCharacter.h"
 #include "UObject/ConstructorHelpers.h"
 
+#include "IPixelStreamingAudioConsumer.h"
+
 
 APixelStreamingDemoGameMode::APixelStreamingDemoGameMode()
 {

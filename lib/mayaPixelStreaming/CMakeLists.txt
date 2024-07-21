@@ -71,6 +71,7 @@ target_link_libraries(${TARGET_NAME}
         ${MAYA_LIBRARIES}
 
     PRIVATE 
+        WebEngineCore WebEngine
         $<$<BOOL:${UFE_FOUND}>:${UFE_LIBRARY}>
 )
 
